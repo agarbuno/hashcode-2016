@@ -44,8 +44,13 @@ Your branch is up-to-date with 'origin/master'.
 nothing to commit, working directory clean
 ```
 
-Which means that we haven't done anything. Now let's change to your own branch for developing with ``checkout `` command with the flag 
+Which means that we haven't done anything. Now let's change to your own branch for developing with the ``checkout `` command with the branch flag `-b` and your first name. That is
 
+```
+$ git checkout -b <your name goes here>
+```
+
+You would notice that it references to a **new** branch. Now if you ask for the status you would see some changes from the previous status message.
  
 ## References:
 http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1
