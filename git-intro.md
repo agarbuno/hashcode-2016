@@ -44,8 +44,49 @@ Your branch is up-to-date with 'origin/master'.
 nothing to commit, working directory clean
 ```
 
-Which means that we haven't done anything. Now let's change to your own branch for developing with ``checkout `` command with the flag 
+Which means that we haven't done anything. Now let's change to your own branch for developing with the ``checkout `` command with the branch flag `-b` and your first name. That is
 
- 
+```
+$ git checkout -b <your name goes here>
+```
+
+You would notice that it references to a **new** branch. Now if you ask for the status you would see some changes from the previous status message. Now, we have to settle our branch with the global *repo*. To do this, let's try our first ``pull`` command from the repo:
+
+```
+$ git pull origin <your name>
+```
+
+This will bring to your computer the most updated version which is located on the project *repo* of your branch. Useful if you work in two computers (home and work, maybe...) Now let's  push your changes (at this time there shouldn't be any) to the *repo*
+
+```
+$ git push origin <your name>
+```
+
+This will upload the latest version *snapshot* of your branch back to the *master*. So what do when we have actual changes in our branch? Let's try this excercise.
+
+1. Create a simple text file:2.   
+```
+$ touch myfirstfile.txt
+```
+2. Add the file to the project's *repo*:  
+```
+$ git add myfirstfile.txt
+```
+3. Create the *snapshot*:  
+```
+$ git commit -a -m 'Here it goes nothing' <- Usually this is a meaningful message
+```
+4. ``Pull`` the *repo* and ``push`` your changes:  
+``` 
+$ git pull origin <your name>
+$ git push origin <your name>
+```
+5. Confirm everything is in order :)  
+```
+$ git status
+```
+
+Simple right?
+
 ## References:
 http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1
