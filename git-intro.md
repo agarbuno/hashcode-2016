@@ -1,3 +1,10 @@
+## Installation 
+
+For Windows users just follow the instructions [here](https://desktop.github.com/), for linux users install it with `apt-get` that is  
+```
+$ sudo apt-get install git
+```
+
 ## Concepts & Terminology  
 
 Some concepts we are going to be using, probably it is going to be the first time you see them. These are: 
