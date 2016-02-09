@@ -65,26 +65,26 @@ $ git push origin <your name>
 This will upload the latest version *snapshot* of your branch back to the *master*. So what do when we have actual changes in our branch? Let's try this excercise.
 
 1. Create a simple text file:  
-```
-$ touch myfirstfile.txt
-```
+        ```
+        $ touch myfirstfile.txt
+        ```
 2. Add the file to the project's *repo*:  
-```
-$ git add myfirstfile.txt
-```
+        ```
+        $ git add myfirstfile.txt
+        ```
 3. Create the *snapshot*:  
-```
-$ git commit -a -m 'Here it goes nothing' <- Usually this is a meaningful message
-```
+        ```
+        $ git commit -a -m 'Here it goes nothing' <- Usually this is a meaningful message
+        ```
 4. ``Pull`` the *repo* and ``push`` your changes:  
-``` 
-$ git pull origin <your name>
-$ git push origin <your name>
-```
+        ``` 
+        $ git pull origin <your name>
+        $ git push origin <your name>
+        ```
 5. Confirm everything is in order :)  
-```
-$ git status
-```
+        ```
+        $ git status
+        ```
 
 Simple right? In summary you should be doing something like this for every change you want to commit to the project. So remeber to ``comit`` + ``pull`` + ``push`` your changes. For now, I will handle the housekeeping. 
 
