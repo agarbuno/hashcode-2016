@@ -88,5 +88,14 @@ $ git status
 
 Simple right?
 
+```
+$ git status
+$ git add newfiles
+$ git commit -a -m 'Meaningful message'
+$ git pull origin <your name> 
+$ git push origin <your name>
+```
+
+
 ## References:
 http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1
