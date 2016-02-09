@@ -64,10 +64,10 @@ $ git push origin <your name>
 
 This will upload the latest version *snapshot* of your branch back to the *master*. So what do when we have actual changes in our branch? Let's try this excercise.
 
-1. Create a simple text file:  
-```
-$ touch myfirstfile.txt
-```
+1. Create a simple text file:2.   
+        ```
+		$ touch myfirstfile.txt
+		```
 2. Add the file to the project's *repo*:  
 ```
 $ git add myfirstfile.txt
@@ -86,7 +86,7 @@ $ git push origin <your name>
 $ git status
 ```
 
-Simple right? In summary you should be doing something like this for every change you want to commit to the project. So remeber to ``comit`` + ``pull`` + ``push`` your changes. For now, I will handle the housekeeping. 
+Simple right?
 
 ```
 $ git status
@@ -95,7 +95,9 @@ $ git commit -a -m 'Meaningful message'
 $ git pull origin <your name> 
 $ git push origin <your name>
 ```
+## Extras:
 
+A very cool feature for *before* commiting changes is the ``diff`` command which highlights the differences between the last saved *snapshot* and your current working space.
 
 ## References:
 http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1
