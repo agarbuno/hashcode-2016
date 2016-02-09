@@ -79,6 +79,8 @@ This will upload the latest version *snapshot* of your branch back to the *maste
 4. ``Pull`` the *repo* and ``push`` your changes:  
         ``` 
         $ git pull origin <your name>  
+        ```  
+        ```
         $ git push origin <your name>
         ```
 5. Confirm everything is in order :)  
