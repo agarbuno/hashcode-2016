@@ -1,8 +1,8 @@
 library(data.table)
-library(ggplot2)
 library(cluster)
+library(ggplot2)
 
-directory <- "~/Dropbox/hash-code/"
+directory <- "~/github-repos/hashcode-2015/data/"
 file <- "logo.in"
 
 data <- fread(paste(directory, file, sep =""), skip = 1, header = F)
@@ -24,7 +24,7 @@ ggplot(melted, aes(Var2,-Var1, fill = value)) +
 newmelt <- as.data.frame(scale(melted[,1:2]))
 newmelt$value <- 1.5 * melted$value
 
-cluster <- kmeans(newmelt, 25, iter.max = 20, trace = 1)
+cluster <- kmeans(newmelt, 4, iter.max = 20, trace = 1)
 melted$cluster <- cluster$cluster
 
 ggplot(melted, aes(Var2,-Var1, fill = cluster)) +
@@ -33,7 +33,23 @@ ggplot(melted, aes(Var2,-Var1, fill = cluster)) +
   coord_fixed(2) + 
   scale_fill_distiller(palette = "Spectral")
 
+melted <- data.table(melted)
+submelt <- data.frame(melted[value > 0,])
+# submelt <- data.frame(scale(submelt[,c(1,2)]))
 
-data <- pam(melted, metric = "manhattan", stand = F, k = 8, trace.lev = 1, cluster.only=TRUE)
-melted$cluster <- data
+hierq <- hclust(dist(submelt[,c(1,2)], method = "manhattan"))
 
+plot(hierq)
+
+hierq <- data.table( order = hierq$order, cluster = cutree(hierq, k = 150) )
+setorder(hierq, order)
+hierq
+submelt$cluster <- hierq$cluster
+melted$hcluster <- 0
+melted[value > 0,]$hcluster <- submelt$cluster+0.0
+
+ggplot(melted, aes(Var2,-Var1, fill = (hcluster==10)+.0 )) +
+  geom_raster() +
+  theme(legend.position="none") +
+  coord_fixed(2) + 
+  scale_fill_distiller(palette = "Spectral")
